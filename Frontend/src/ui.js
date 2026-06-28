@@ -10,6 +10,11 @@ import { InputNode } from './nodes/inputNode';
 import { LLMNode } from './nodes/llmNode';
 import { OutputNode } from './nodes/outputNode';
 import { TextNode } from './nodes/textNode';
+import {APINode} from './nodes/APINode';
+import {DatabaseNode} from './nodes/DatabaseNode';
+import {DelayNode} from './nodes/DelayNode';
+import {EmailNode} from './nodes/EmailNode';
+import {ImageNode} from './nodes/ImageNode';
 
 import 'reactflow/dist/style.css';
 
@@ -20,6 +25,11 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  API: APINode,
+  Database: DatabaseNode,
+  Delay: DelayNode,
+  Email: EmailNode,
+  Image: ImageNode
 };
 
 const selector = (state) => ({
@@ -90,7 +100,7 @@ export const PipelineUI = () => {
 
     return (
         <>
-        <div ref={reactFlowWrapper} style={{width: '100wv', height: '70vh'}}>
+        <div ref={reactFlowWrapper} style={{width: '100wv', height: '100vh'}}>
             <ReactFlow
                 nodes={nodes}
                 edges={edges}
@@ -106,7 +116,7 @@ export const PipelineUI = () => {
                 connectionLineType='smoothstep'
             >
                 <Background color="#aaa" gap={gridSize} />
-                <Controls />
+                <Controls position="top-right" />
                 <MiniMap />
             </ReactFlow>
         </div>
