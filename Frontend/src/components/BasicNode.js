@@ -6,9 +6,6 @@ export const BasicNode = ({
   children,
   handles = [],
 }) => {
-  console.log("handles", handles);
-  console.log("children", children);
-
   return (
     <div
       style={{
@@ -29,6 +26,7 @@ export const BasicNode = ({
           type={handle.type}
           position={handle.position}
           id={handle.id}
+          style={handle.style}
         />
       ))}
     </div>
